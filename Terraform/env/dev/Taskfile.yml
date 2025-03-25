@@ -1,0 +1,17 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  plan_all:
+    cmds:
+      - terraform init
+      - terraform plan
+
+  apply_all:
+    cmds:
+      - terraform init 
+      - terraform apply -auto-approve

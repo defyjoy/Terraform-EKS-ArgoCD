@@ -1,0 +1,21 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+
+  provision_all:
+    cmds:
+      - helm repo add argo https://argoproj.github.io/argo-helm
+      - helm repo add external-dns https://kubernetes-sigs.github.io/external-dns/
+      - helm repo update
+      - helm upgrade -i --wait argocd argo/argo-cd --version 7.8.13 -n argocd --create-namespace -f ./ArgoCD/manifests/helmcharts/argocd/argocd.values.yaml
+      - helm upgrade -i --wait external-dns external-dns/external-dns -n external-dns --create-namespace -f ./ArgoCD/manifests/helmcharts/external-dns/management.values.yaml

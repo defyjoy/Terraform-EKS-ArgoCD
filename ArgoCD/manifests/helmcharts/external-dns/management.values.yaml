@@ -1,0 +1,21 @@
+logLevel: debug
+provider: aws
+
+serviceAccount:
+  annotations: 
+    eks.amazonaws.com/role-arn: arn:aws:iam::182614455229:role/iam-microstack-route53-externaldns-certmanager-role
+
+region: "eu-west-1"
+
+aws:
+  zoneType: public
+
+zoneIdFilters:
+  - Z0315663A2RJ2OZG1DDM
+
+ingressClassFilters: 
+  - alb
+domainFilters:
+  - jrconline.xyz
+policy: upsert-only
+txtOwnerId: external-dns-public-Z0315663A2RJ2OZG1DDM

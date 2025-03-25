@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  # - ./oci/kargo-oci-helm-secret.yaml
+  # - ./external-secrets/kargo-external-secerts.yaml
+
+  # - ../apps/repositories
+  # - ../components/clusters
+  - ../components/applications
+  - ../components/applicationsets
+  - ../components/argoprojects
+  
+  ## Individual bootstrap
+  - bootstrapper.yaml
+  # - argocd-app.yaml
+  # - argo-rollouts-app.yaml
+  # - argo-events-app.yaml
+
+  # - kargo-app.yaml
+  # - kargo-projects-app.yaml
