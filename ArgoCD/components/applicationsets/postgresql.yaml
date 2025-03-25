@@ -2,13 +2,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: zitadel
+  name: postgresql
 spec:
   generators:
     - clusters: {}
   template:
     metadata:
-      name: '{{name}}-zitadel'      
+      name: '{{name}}-postgresql'      
     spec:
       project: '{{name}}'
       syncPolicy:        
@@ -28,11 +28,11 @@ spec:
         - repoURL: https://github.com/defyjoy/Terraform-EKS-ArgoCD.git
           ref: argo
         - repoURL: https://charts.bitnami.com/bitnami
-          chart: zitadel
-          targetRevision: 8.12.2
+          chart: postgresql
+          targetRevision: 16.5.6
           helm:
             valueFiles:
-            - $argo/ArgoCD/manifests/helmcharts/zitadel/{{name}}.values.yaml
+            - $argo/ArgoCD/manifests/helmcharts/postgresql/{{name}}.values.yaml
       destination:
         server: '{{server}}'
-        namespace: zitadel
+        namespace: postgresql
