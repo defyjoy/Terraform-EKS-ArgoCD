@@ -33,7 +33,7 @@ spec:
           helm:
             valueFiles:
             - $argo/ArgoCD/manifests/helmcharts/ebs-csi-driver/{{name}}.values.yaml
-        - repo: https://github.com/defyjoy/Terraform-EKS-ArgoCD.git
+        - repoURL: https://github.com/defyjoy/Terraform-EKS-ArgoCD.git
           targetRevision: main # should be master for prod and dev
           path: ArgoCD/manifests/helmcharts/ebs-csi-driver
       destination:
