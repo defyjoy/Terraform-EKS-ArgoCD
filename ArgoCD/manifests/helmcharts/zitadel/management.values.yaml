@@ -21,4 +21,5 @@ ingress:
           pathType: Prefix
   # tls: []
 
-masterkey: "?5TXnw+ogi1S+3[="
+zitadel:
+  masterkey: "?5TXnw+ogi1S+3[="
