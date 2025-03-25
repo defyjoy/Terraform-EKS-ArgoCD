@@ -5,14 +5,14 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: https://github.com/defyjoy/Terraform.git
+    - repoURL: https://github.com/defyjoy/Terraform-EKS-ArgoCD.git
       ref: argo
     - repoURL: https://argoproj.github.io/argo-helm
       chart: argo-cd
       targetRevision: 7.8.13
       helm:
         valueFiles:
-        - $argo/k8s/argocd/gcp/manifests/helmcharts/argocd/argocd.values.yaml
+        - $argo/ArgoCD/manifests/helmcharts/argocd/argocd.values.yaml
 
   destination:
     server: "https://kubernetes.default.svc"
