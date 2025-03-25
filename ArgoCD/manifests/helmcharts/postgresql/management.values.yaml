@@ -5,3 +5,4 @@ primary:
 
 global:
   defaultStorageClass: gp2
+  storageClass: gp2
