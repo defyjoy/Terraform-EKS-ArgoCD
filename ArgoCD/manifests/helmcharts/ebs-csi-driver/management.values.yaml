@@ -1,0 +1,25 @@
+
+
+
+storageClasses:
+  - name: aws-ebs
+    reclaimPolicy: Delete
+    volumeBindingMode: Immediate
+    annotations:
+      argocd.argoproj.io/sync-wave: "10"
+  - name: gp3
+    reclaimPolicy: Delete
+    volumeBindingMode: WaitForFirstConsumer
+    annotations:
+      argocd.argoproj.io/sync-wave: "10"
+    parameters:
+      type: gp3
+
+controller:
+  serviceAccount:                
+    annotations: 
+      eks.amazonaws.com/role-arn: arn:aws:iam::727646503346:role/ebs-csi-driver-role
+node:
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::727646503346:role/ebs-csi-driver-role
