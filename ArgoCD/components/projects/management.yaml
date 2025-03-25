@@ -12,11 +12,12 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   sourceRepos:
-    - https://charts.jetstack.io # cert-manager
-    - https://kubernetes-sigs.github.io/external-dns/ # external-dns
-    - https://prometheus-community.github.io/helm-charts # Prometheus
-    - https://github.com/defyjoy/Terraform.git # app manifest repo
-    - https://charts.external-secrets.io # external-secrets
+    - "*"
+    # - https://charts.jetstack.io # cert-manager
+    # - https://kubernetes-sigs.github.io/external-dns/ # external-dns
+    # - https://prometheus-community.github.io/helm-charts # Prometheus
+    # - https://github.com/defyjoy/Terraform.git # app manifest repo
+    # - https://charts.external-secrets.io # external-secrets
   destinations:
     - namespace: "*"
       server: "https://kubernetes.default.svc"
