@@ -1,0 +1,22 @@
+
+ingress:
+  enabled: false
+  className: alb
+  annotations:
+      external-dns.alpha.kubernetes.io/alias: true
+      external-dns.alpha.kubernetes.io/hostname: zitadel.jrconline.xyz
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+
+      alb.ingress.kubernetes.io/load-balancer-name: terraform-eks-argocd
+      alb.ingress.kubernetes.io/group.name: terraform-eks-argocd
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/target-type: instance
+      service.beta.kubernetes.io/aws-load-balancer-type: external
+      service.beta.kubernetes.io/aws-load-balancer-internal: "false"
+  hosts:
+    - host: zitadel.jrconline.xyz
+      paths:
+        - path: /
+          pathType: Prefix
+  # tls: []
