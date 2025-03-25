@@ -8,3 +8,15 @@ primary:
 global:
   defaultStorageClass: aws-ebs
   storageClass: aws-ebs
+
+  postgresql:
+    auth:
+      postgresPassword: "postgresql@123"
+      username: "admin"
+      password: "password@123"
+      database: "zitadel"
+      # existingSecret: ""
+      # secretKeys:
+      #   adminPasswordKey: ""
+      #   userPasswordKey: ""
+      #   replicationPasswordKey: ""

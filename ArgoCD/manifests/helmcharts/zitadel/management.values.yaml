@@ -38,6 +38,8 @@ env:
     value: "disable"
   - name: ZITADEL_DATABASE_POSTGRES_USER_USERNAME
     value: postgres
+  - name: ZITADEL_DATABASE_POSTGRES_USER_PASSWORD
+    value: postgresql@123
 
   # configmapConfig:
   #   ExternalSecure: false
