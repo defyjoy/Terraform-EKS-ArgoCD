@@ -28,7 +28,7 @@ spec:
         - repoURL: https://github.com/defyjoy/Terraform-EKS-ArgoCD.git
           ref: argo
         - repoURL: https://kubernetes-sigs.github.io/aws-ebs-csi-driver/
-          chart: ebs-csi-driver
+          chart: aws-ebs-csi-driver
           targetRevision: 2.41.0
           helm:
             valueFiles:
