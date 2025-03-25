@@ -9,8 +9,8 @@ terraform {
 
 
 provider "aws" {
-  profile = "test"
-  region  = "ap-south-1"
+  profile = "stage013"
+  region  = "eu-west-1"
 
   # profile = "stage013"
   # region  = "eu-west-1"
