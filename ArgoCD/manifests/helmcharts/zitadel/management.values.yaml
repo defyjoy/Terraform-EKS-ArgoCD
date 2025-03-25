@@ -27,10 +27,17 @@ zitadel:
 # Additional environment variables
 env:
   - name: ZITADEL_DATABASE_POSTGRES_HOST
-    valueFrom:
-      secretKeyRef:
-        name: management-postgresql
-        key: host
+    value: management-postgresql.postgresql.svc.cluster.local
+  - name: ZITADEL_DATABASE_POSTGRES_PORT
+    value: "5432"
+  - name: ZITADEL_DATABASE_POSTGRES_DATABASE
+    value: "zitadel"
+  - name: ZITADEL_DATABASE_POSTGRES_USER_SSL_MODE
+    value: "disable"
+  - name: ZITADEL_DATABASE_POSTGRES_ADMIN_SSL_MODE
+    value: "disable"
+  - name: ZITADEL_DATABASE_POSTGRES_USER_USERNAME
+    value: postgres
 
   # configmapConfig:
   #   ExternalSecure: false
