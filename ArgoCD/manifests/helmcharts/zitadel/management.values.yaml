@@ -28,7 +28,7 @@ zitadel:
 # Additional environment variables
 env:
   - name: ZITADEL_EXTERNALSECURE
-    value: false
+    value: "false"
   - name: ZITADEL_DATABASE_POSTGRES_HOST
     value: management-postgresql.postgresql.svc.cluster.local
   - name: ZITADEL_DATABASE_POSTGRES_PORT
