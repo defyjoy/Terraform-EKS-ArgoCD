@@ -27,7 +27,7 @@ spec:
       sources:
         - repoURL: https://github.com/defyjoy/Terraform-EKS-ArgoCD.git
           ref: argo
-        - repoURL: https://kubernetes-sigs.github.io/zitadel/
+        - repoURL: https://charts.zitadel.com
           chart: zitadel
           targetRevision: 8.12.2
           helm:
