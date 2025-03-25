@@ -4,3 +4,4 @@ kind: Kustomization
 
 resources:
   - external-dns.yaml
+  - zitadel.yaml
