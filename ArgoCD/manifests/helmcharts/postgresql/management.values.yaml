@@ -4,5 +4,5 @@ primary:
 
 
 global:
-  defaultStorageClass: gp2
-  storageClass: gp2
+  defaultStorageClass: ebs-sc
+  storageClass: ebs-sc
