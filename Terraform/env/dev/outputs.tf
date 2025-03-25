@@ -3,8 +3,8 @@ output "external_dns_route53_zone_arns" {
   value       = module.base.external_dns_route53_zone_arns
 }
 
-output "external_dns_role_arn" {
-  description = "description"
-  value       = module.base.external_dns_role_arn
-}
+# output "external_dns_role_arn" {
+#   description = "description"
+#   value       = module.base.external_dns_role_arn
+# }
 

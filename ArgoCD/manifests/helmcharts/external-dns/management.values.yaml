@@ -2,9 +2,9 @@ logLevel: debug
 provider: 
   name: aws
 
-serviceAccount:
-  annotations: 
-    eks.amazonaws.com/role-arn: arn:aws:iam::727646503346:role/external-dns
+# serviceAccount:
+#   annotations: 
+#     eks.amazonaws.com/role-arn: arn:aws:iam::727646503346:role/external-dns
 
 region: "ap-south-1"
 
