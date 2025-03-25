@@ -1,5 +1,6 @@
 logLevel: debug
-provider: aws
+provider: 
+  name: aws
 
 serviceAccount:
   annotations: 

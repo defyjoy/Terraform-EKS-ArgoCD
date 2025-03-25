@@ -19,3 +19,4 @@ tasks:
       - helm repo update
       - helm upgrade -i --wait argocd argo/argo-cd --version 7.8.13 -n argocd --create-namespace -f ./ArgoCD/manifests/helmcharts/argocd/argocd.values.yaml
       - helm upgrade -i --wait external-dns external-dns/external-dns -n external-dns --create-namespace -f ./ArgoCD/manifests/helmcharts/external-dns/management.values.yaml
+      - kustomize build ArgoCD/bootstrap | kubectl apply -f -
