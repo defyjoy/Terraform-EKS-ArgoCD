@@ -29,6 +29,8 @@ service:
 zitadel:
   masterkey: x123456789012345678901234567891y
   configmapConfig:
+    ExternalSecure: false
+    ExternalDomain: zitadel.jrconline.xyz
     TLS:
       Enabled: false
 
