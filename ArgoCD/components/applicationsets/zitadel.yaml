@@ -27,12 +27,16 @@ spec:
       sources:
         - repoURL: https://github.com/defyjoy/Terraform-EKS-ArgoCD.git
           ref: argo
-        - repoURL: https://charts.bitnami.com/bitnami
+        - repoURL: https://charts.zitadel.com
           chart: zitadel
           targetRevision: 8.12.2
           helm:
             valueFiles:
             - $argo/ArgoCD/manifests/helmcharts/zitadel/{{name}}.values.yaml
+
+        - repoURL: https://github.com/defyjoy/Terraform-EKS-ArgoCD.git
+          targetRevision: main
+          path: ArgoCD/manifests/helmcharts/zitadel
       destination:
         server: '{{server}}'
         namespace: zitadel
