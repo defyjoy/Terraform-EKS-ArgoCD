@@ -32,7 +32,7 @@ spec:
           targetRevision: 1.15.0
           helm:
             valueFiles:
-            - $argo/k8s/argocd/gcp/manifests/helmcharts/external-dns/{{name}}.values.yaml
+            - $argo/ArgoCD/manifests/helmcharts/external-dns/{{name}}.values.yaml
       destination:
         server: '{{server}}'
         namespace: external-dns-public

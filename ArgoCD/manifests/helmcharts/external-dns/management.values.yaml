@@ -3,19 +3,19 @@ provider: aws
 
 serviceAccount:
   annotations: 
-    eks.amazonaws.com/role-arn: arn:aws:iam::182614455229:role/iam-microstack-route53-externaldns-certmanager-role
+    eks.amazonaws.com/role-arn: arn:aws:iam::727646503346:role/external-dns
 
-region: "eu-west-1"
+region: "ap-south-1"
 
 aws:
   zoneType: public
 
 zoneIdFilters:
-  - Z0315663A2RJ2OZG1DDM
+  - Z099080110OR3KUMVXE1F
 
 ingressClassFilters: 
   - alb
 domainFilters:
   - jrconline.xyz
 policy: upsert-only
-txtOwnerId: external-dns-public-Z0315663A2RJ2OZG1DDM
+txtOwnerId: external-dns-public-Z099080110OR3KUMVXE1F
