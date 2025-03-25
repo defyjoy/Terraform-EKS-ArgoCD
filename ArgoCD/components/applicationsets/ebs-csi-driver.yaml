@@ -1,0 +1,38 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: ebs-csi-driver
+spec:
+  generators:
+    - clusters: {}
+  template:
+    metadata:
+      name: '{{name}}-ebs-csi-driver'      
+    spec:
+      project: '{{name}}'
+      syncPolicy:        
+        retry:
+          limit: 3 # number of failed sync attempt retries; unlimited number of attempts if less than 0
+          backoff:
+            duration: 5s # the amount to back off. Default unit is seconds, but could also be a duration (e.g. "2m", "1h")
+            factor: 2 # a factor to multiply the base duration after each failed retry
+            maxDuration: 5s # the maximum amount of time allowed for the backoff strategy
+        syncOptions:
+          - CreateNamespace=true
+          - FailOnSharedResource=true
+        automated:
+          prune: true
+          selfHeal: true
+      sources:
+        - repoURL: https://github.com/defyjoy/Terraform-EKS-ArgoCD.git
+          ref: argo
+        - repoURL: https://kubernetes-sigs.github.io/aws-ebs-csi-driver/
+          chart: ebs-csi-driver
+          targetRevision: 2.41.0
+          helm:
+            valueFiles:
+            - $argo/ArgoCD/manifests/helmcharts/ebs-csi-driver/{{name}}.values.yaml
+      destination:
+        server: '{{server}}'
+        namespace: ebs-csi-driver

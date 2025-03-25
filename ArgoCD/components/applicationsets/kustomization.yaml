@@ -6,3 +6,4 @@ resources:
   - external-dns.yaml
   - zitadel.yaml
   - postgresql.yaml
+  - ebs-csi-driver.yaml
