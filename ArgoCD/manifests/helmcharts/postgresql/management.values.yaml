@@ -11,9 +11,9 @@ global:
 
   postgresql:
     auth:
-      postgresPassword: "postgresql@123"
-      username: "zitadel_queries"
-      password: "password@123"
+      postgresPassword: "postgres"
+      username: "zitadeladmin"
+      password: "zitadeladmin"
       database: "zitadel"
       # existingSecret: ""
       # secretKeys:

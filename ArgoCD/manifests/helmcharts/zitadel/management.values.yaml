@@ -1,3 +1,4 @@
+# Ref - https://github.com/zitadel/zitadel/issues/3598#issuecomment-1289463922
 
 ingress:
   enabled: true
@@ -26,6 +27,8 @@ zitadel:
 
 # Additional environment variables
 env:
+  - name: ZITADEL_EXTERNALSECURE
+    value: false
   - name: ZITADEL_DATABASE_POSTGRES_HOST
     value: management-postgresql.postgresql.svc.cluster.local
   - name: ZITADEL_DATABASE_POSTGRES_PORT
@@ -37,13 +40,17 @@ env:
   - name: ZITADEL_DATABASE_POSTGRES_ADMIN_SSL_MODE
     value: "disable"
   - name: ZITADEL_DATABASE_POSTGRES_USER_USERNAME
-    value: postgres
+    value: zitadeluser
   - name: ZITADEL_DATABASE_POSTGRES_USER_PASSWORD
-    value: postgresql@123
-  - name: ZITADEL_FIRSTINSTANCE_ORG_HUMAN_USERNAME
-    value: zitadel_queries
-  - name: ZITADEL_FIRSTINSTANCE_ORG_HUMAN_PASSWORD
-    value: password@123
+    value: zitadeluser
+  # - name: ZITADEL_FIRSTINSTANCE_ORG_HUMAN_USERNAME
+  #   value: zitadel_queries
+  # - name: ZITADEL_FIRSTINSTANCE_ORG_HUMAN_PASSWORD
+  #   value: password@123
+  - name: ZITADEL_DATABASE_POSTGRES_ADMIN_USERNAME
+    value: zitadeladmin
+  - name: ZITADEL_DATABASE_POSTGRES_ADMIN_PASSWORD
+    value: zitadeladmin
 
   # configmapConfig:
   #   ExternalSecure: false
