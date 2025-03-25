@@ -6,7 +6,7 @@ provider:
 #   annotations: 
 #     eks.amazonaws.com/role-arn: arn:aws:iam::727646503346:role/external-dns
 
-region: "ap-south-1"
+region: "eu-west-1"
 
 aws:
   zoneType: public
