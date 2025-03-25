@@ -26,3 +26,9 @@ tasks:
     cmds:
       - kustomize build ArgoCD/bootstrap | kubectl apply -f -
       
+  deprovision:
+    cmds:
+      - helm uninstall --wait argocd -n argocd
+      - helm uninstall --wait external-dns -n external-dns
+      - kustomize build ArgoCD/bootstrap | kubectl apply -f -
+

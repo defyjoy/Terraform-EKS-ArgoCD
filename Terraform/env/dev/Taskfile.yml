@@ -15,3 +15,7 @@ tasks:
     cmds:
       - terraform init 
       - terraform apply -auto-approve
+
+  destroy_all:
+    cmds:
+      - terraform destroy -auto-approve
