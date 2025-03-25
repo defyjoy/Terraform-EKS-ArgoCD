@@ -41,9 +41,9 @@ env:
   - name: ZITADEL_DATABASE_POSTGRES_USER_PASSWORD
     value: postgresql@123
   - name: ZITADEL_FIRSTINSTANCE_ORG_HUMAN_USERNAME
-    value: postgres
+    value: zitadel_queries
   - name: ZITADEL_FIRSTINSTANCE_ORG_HUMAN_PASSWORD
-    value: postgresql@123
+    value: password@123
 
   # configmapConfig:
   #   ExternalSecure: false

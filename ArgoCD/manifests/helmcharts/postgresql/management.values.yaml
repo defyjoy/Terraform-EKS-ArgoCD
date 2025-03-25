@@ -12,7 +12,7 @@ global:
   postgresql:
     auth:
       postgresPassword: "postgresql@123"
-      username: "admin"
+      username: "zitadel_queries"
       password: "password@123"
       database: "zitadel"
       # existingSecret: ""
