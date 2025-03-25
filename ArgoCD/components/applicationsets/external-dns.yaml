@@ -35,4 +35,4 @@ spec:
             - $argo/ArgoCD/manifests/helmcharts/external-dns/{{name}}.values.yaml
       destination:
         server: '{{server}}'
-        namespace: external-dns-public
+        namespace: external-dns
