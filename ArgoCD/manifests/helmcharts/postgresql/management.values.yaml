@@ -4,5 +4,5 @@ primary:
 
 
 global:
-  defaultStorageClass: ebs-sc
-  storageClass: ebs-sc
+  defaultStorageClass: aws-ebs
+  storageClass: aws-ebs
