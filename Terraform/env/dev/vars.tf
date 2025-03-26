@@ -4,10 +4,15 @@ variable "vpc_cidr" {
   default     = "10.23.0.0/16"
 }
 
-variable "vpc_id" {
-  type        = string
-  description = "description"
-}
+# variable "vpc_id" {
+#   type        = string
+#   description = "description"
+# }
+
+# variable "private_subnet_ids" {
+#   type        = list(string)
+#   description = "private subnet ids"
+# }
 
 variable "kubernetes_version" {
   type        = string
@@ -24,7 +29,3 @@ variable "addons" {
   }
 }
 
-variable "private_subnet_ids" {
-  type        = list(string)
-  description = "private subnet ids"
-}

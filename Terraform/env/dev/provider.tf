@@ -9,7 +9,7 @@ terraform {
 
 
 provider "aws" {
-  profile = "stage013"
+  profile = "test"
   region  = "eu-west-1"
 
   # profile = "stage013"

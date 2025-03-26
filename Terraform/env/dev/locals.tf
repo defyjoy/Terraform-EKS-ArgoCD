@@ -68,7 +68,7 @@ locals {
       aws_cluster_name = module.eks.cluster_name
       aws_region       = local.region
       aws_account_id   = data.aws_caller_identity.current.account_id
-      aws_vpc_id       = var.vpc_id #module.vpc.vpc_id
+      aws_vpc_id       = module.vpc.vpc_id
     }
     # {
     #   addons_repo_url      = local.gitops_addons_url

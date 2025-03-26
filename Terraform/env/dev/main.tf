@@ -61,10 +61,10 @@ module "eks" {
   cluster_endpoint_public_access = true
 
 
-  # vpc_id = module.vpc.vpc_id
-  # subnet_ids = module.vpc.private_subnets
-  vpc_id     = var.vpc_id
-  subnet_ids = var.private_subnet_ids
+  vpc_id     = module.vpc.vpc_id
+  subnet_ids = module.vpc.private_subnets
+  # vpc_id     = var.vpc_id
+  # subnet_ids = var.private_subnet_ids
 
   eks_managed_node_groups = {
     management = {
@@ -114,27 +114,27 @@ module "eks" {
 ################################################################################
 # Supporting Resources
 ################################################################################
-# module "vpc" {
-#   source  = "terraform-aws-modules/vpc/aws"
-#   version = "~> 5.0"
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "~> 5.0"
 
-#   name = local.name
-#   cidr = try(local.vpc_cidr, "10.23.0.0/16")
+  name = local.name
+  cidr = try(local.vpc_cidr, "10.23.0.0/16")
 
-#   azs             = local.azs
-#   private_subnets = [for k, v in local.azs : cidrsubnet(local.vpc_cidr, 4, k)]
-#   public_subnets  = [for k, v in local.azs : cidrsubnet(local.vpc_cidr, 8, k + 48)]
+  azs             = local.azs
+  private_subnets = [for k, v in local.azs : cidrsubnet(local.vpc_cidr, 4, k)]
+  public_subnets  = [for k, v in local.azs : cidrsubnet(local.vpc_cidr, 8, k + 48)]
 
-#   enable_nat_gateway = true
-#   single_nat_gateway = true
+  enable_nat_gateway = true
+  single_nat_gateway = true
 
-#   public_subnet_tags = {
-#     "kubernetes.io/role/elb" = 1
-#   }
+  public_subnet_tags = {
+    "kubernetes.io/role/elb" = 1
+  }
 
-#   private_subnet_tags = {
-#     "kubernetes.io/role/internal-elb" = 1
-#   }
+  private_subnet_tags = {
+    "kubernetes.io/role/internal-elb" = 1
+  }
 
-#   tags = local.tags
-# }
+  tags = local.tags
+}
